@@ -3,72 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>منصة المشروع المستدام</title>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<title>إنتاج الطاقة الكهربائية من مياه الصرف الصحي</title>
 
 <style>
 body {
 margin: 0;
-font-family: "Tahoma";
-background: #0b132b;
+font-family: "Segoe UI", Tahoma;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color: white;
 }
 
+/* الهيدر */
 header {
 text-align: center;
-padding: 25px;
-background: linear-gradient(90deg,#1c2541,#3a506b);
+padding: 40px 20px;
+background: rgba(0,0,0,0.3);
+backdrop-filter: blur(10px);
 }
 
+header h1 {
+font-size: 26px;
+line-height: 1.6;
+}
+
+header p {
+opacity: 0.8;
+}
+
+/* القائمة */
 nav {
 display: flex;
 overflow-x: auto;
-background: #1c2541;
+background: rgba(0,0,0,0.4);
 }
 
 nav button {
 flex: 1;
-padding: 12px;
+padding: 14px;
 border: none;
 background: none;
 color: white;
 cursor: pointer;
+font-weight: bold;
 }
 
 nav button:hover {
-background: #3a506b;
+background: rgba(255,255,255,0.1);
 }
 
+/* الأقسام */
 .section {
 display: none;
-padding: 20px;
+padding: 25px;
 }
 
 .active {
 display: block;
 }
 
+/* الكروت */
 .card {
-background: #1c2541;
-padding: 18px;
-border-radius: 12px;
+background: rgba(255,255,255,0.08);
+padding: 20px;
+border-radius: 15px;
 margin-bottom: 15px;
-line-height: 1.8;
+backdrop-filter: blur(12px);
+box-shadow: 0 0 20px rgba(0,0,0,0.3);
+line-height: 1.9;
 }
 
+/* إبراز */
 .highlight {
-color: #5bc0be;
+color: #00e5ff;
+font-weight: bold;
 }
 
+/* زر العرض */
 button.mode {
-background: #e63946;
+margin-top: 15px;
+padding: 10px 15px;
 border: none;
-padding: 10px;
-margin-top: 10px;
-color: white;
-border-radius: 8px;
+border-radius: 10px;
+background: #00c9a7;
+color: black;
 cursor: pointer;
+font-weight: bold;
 }
 </style>
 </head>
@@ -76,8 +95,11 @@ cursor: pointer;
 <body>
 
 <header>
-<h1>⚡ إنتاج الطاقة من مياه الصرف الصحي</h1>
-<p>نموذج مبتكر باستخدام <span class="highlight">الخلايا الوقودية الميكروبية</span></p>
+<h1>
+إنتاج الطاقة الكهربائية من مياه الصرف الصحي باستخدام الخلايا الوقودية الميكروبية في منطقة عسير
+</h1>
+<p>نموذج ابتكاري لتحقيق الاستدامة البيئية والطاقة المتجددة</p>
+
 <button class="mode" onclick="presentationMode()">🎤 وضع العرض</button>
 </header>
 
@@ -85,9 +107,9 @@ cursor: pointer;
 <button onclick="show('idea')">الفكرة</button>
 <button onclick="show('science')">الأساس العلمي</button>
 <button onclick="show('components')">المكونات</button>
-<button onclick="show('steps')">التنفيذ</button>
+<button onclick="show('experiment')">التجربة</button>
 <button onclick="show('results')">النتائج</button>
-<button onclick="show('chart')">التحليل</button>
+<button onclick="show('analysis')">التحليل</button>
 <button onclick="show('impact')">الأثر</button>
 <button onclick="show('future')">الاستدامة</button>
 </nav>
@@ -97,7 +119,7 @@ cursor: pointer;
 <div class="card">
 <h2>💡 فكرة المشروع</h2>
 <p>
-يقوم المشروع على استغلال النشاط الحيوي للبكتيريا الموجودة في مياه الصرف الصحي لتحويل الطاقة الكيميائية المخزنة في المواد العضوية إلى طاقة كهربائية قابلة للاستخدام.
+يهدف المشروع إلى استغلال مياه الصرف الصحي كمصدر غير تقليدي للطاقة، من خلال استخدام الخلايا الوقودية الميكروبية لتحويل الطاقة الكيميائية إلى طاقة كهربائية.
 </p>
 </div>
 </div>
@@ -107,7 +129,7 @@ cursor: pointer;
 <div class="card">
 <h2>🧠 الأساس العلمي</h2>
 <p>
-تعتمد الخلايا الوقودية الميكروبية على عمليات الأكسدة الحيوية، حيث تقوم البكتيريا بتحليل المركبات العضوية وإطلاق إلكترونات تنتقل عبر الأقطاب الكهربائية، مولدةً تيارًا كهربائيًا.
+تعتمد الخلايا الوقودية الميكروبية على نشاط البكتيريا التي تقوم بتحليل المواد العضوية وإطلاق إلكترونات، تنتقل عبر الأقطاب لتوليد تيار كهربائي.
 </p>
 </div>
 </div>
@@ -115,29 +137,39 @@ cursor: pointer;
 <!-- المكونات -->
 <div id="components" class="section">
 <div class="card">
-<h2>🔬 مكونات النظام</h2>
+<h2>🔬 مكونات التجربة</h2>
 <ul>
-<li>حجرة أنود (بيئة لا هوائية)</li>
-<li>حجرة كاثود</li>
-<li>أقطاب كربونية (Graphite)</li>
-<li>دائرة كهربائية خارجية</li>
-<li>مياه صرف صحي كمصدر عضوي</li>
-<li>جهاز قياس الجهد والتيار</li>
+<li>أرز مخمّر</li>
+<li>تربة زراعية</li>
+<li>مياه (عادية أو مالحة)</li>
+<li>مسامير مجلفنة + كربون (أقطاب)</li>
+<li>أسلاك توصيل</li>
+<li>جهاز قياس الجهد</li>
 </ul>
 </div>
 </div>
 
-<!-- التنفيذ -->
-<div id="steps" class="section">
+<!-- التجربة -->
+<div id="experiment" class="section">
 <div class="card">
-<h2>🧪 خطوات التنفيذ</h2>
-<ol>
-<li>تجهيز الحجرة الحيوية وإضافة العينة</li>
-<li>تركيب الأقطاب وتوصيل الدائرة</li>
-<li>تهيئة البيئة اللاهوائية</li>
-<li>تشغيل النظام ومراقبة التفاعل</li>
-<li>تسجيل القراءات وتحليل البيانات</li>
-</ol>
+<h2>🧪 منهجية التجربة</h2>
+
+<p>
+تم تخمير الأرز لإنتاج وسط غني بالبكتيريا، ثم خلطه مع التربة الزراعية وتركه لمدة أسبوع حتى ظهور نشاط ميكروبي واضح.
+</p>
+
+<p>
+تم إدخال الأقطاب الكهربائية داخل الخليط، وإنشاء حجرة أخرى تحتوي ماء أو ماء وملح لتبادل الأيونات.
+</p>
+
+<p>
+تم توصيل النظام بجهاز قياس الجهد ومراقبة النتائج.
+</p>
+
+<p>
+تم تكرار التجربة مرتين لضمان دقة النتائج.
+</p>
+
 </div>
 </div>
 
@@ -145,26 +177,46 @@ cursor: pointer;
 <div id="results" class="section">
 <div class="card">
 <h2>📊 النتائج</h2>
+
 <p>
-تم تسجيل إنتاج جهد كهربائي تدريجي وصل إلى مستويات قابلة للقياس، مما يثبت كفاءة النموذج وإمكانية تطويره.
+تم تسجيل جهد كهربائي وصل إلى <span class="highlight">2 فولت</span>.
 </p>
+
+<ul>
+<li>استقرار في الأداء</li>
+<li>تكرار النتائج</li>
+<li>نجاح النموذج التجريبي</li>
+</ul>
+
 </div>
 </div>
 
-<!-- الرسم البياني -->
-<div id="chart" class="section">
+<!-- التحليل -->
+<div id="analysis" class="section">
 <div class="card">
-<h2>📈 تحليل الأداء</h2>
-<canvas id="chartData"></canvas>
+<h2>📈 التحليل العلمي</h2>
+
+<p>
+النشاط البكتيري الناتج عن التخمير أدى إلى إطلاق الإلكترونات، والتي تم التقاطها عبر الأقطاب الكهربائية.
+</p>
+
+<p>
+ساهمت البيئة المتوسطة الحموضة في استقرار البكتيريا، بينما ساعد الماء أو الماء المالح في انتقال الأيونات.
+</p>
+
+<p>
+تكرار النتائج يؤكد موثوقية التجربة وقابلية تطويرها.
+</p>
+
 </div>
 </div>
 
 <!-- الأثر -->
 <div id="impact" class="section">
 <div class="card">
-<h2>🌍 الأثر المجتمعي</h2>
+<h2>🌍 الأثر</h2>
 <p>
-يساهم المشروع في تعزيز الاستدامة البيئية وتقليل الهدر، بالإضافة إلى نشر ثقافة الابتكار العلمي.
+يساهم المشروع في تعزيز الاستدامة البيئية، ونشر الوعي بالطاقة المتجددة، وتحفيز الابتكار العلمي.
 </p>
 </div>
 </div>
@@ -172,9 +224,9 @@ cursor: pointer;
 <!-- الاستدامة -->
 <div id="future" class="section">
 <div class="card">
-<h2>♻️ الاستدامة والتوسع</h2>
+<h2>♻️ الاستدامة</h2>
 <p>
-يمكن تطوير النموذج ليُستخدم في محطات معالجة المياه لإنتاج طاقة نظيفة، مما يدعم التحول نحو الاقتصاد الأخضر.
+يمكن تطوير المشروع وتطبيقه في محطات معالجة المياه، مما يجعله حلاً مستدامًا للطاقة النظيفة.
 </p>
 </div>
 </div>
@@ -188,18 +240,6 @@ document.getElementById(id).classList.add('active');
 function presentationMode(){
 document.body.style.fontSize = "22px";
 }
-
-new Chart(document.getElementById('chartData'), {
-type: 'line',
-data: {
-labels: ['0','1','2','3','4','5'],
-datasets: [{
-label: 'الجهد الكهربائي',
-data: [0.2,0.6,1.1,1.5,1.8,2],
-borderWidth: 3
-}]
-}
-});
 </script>
 
 </body>
