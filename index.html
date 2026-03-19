@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة المشروع المستدام</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body {
+margin: 0;
+font-family: "Tahoma";
+background: #0b132b;
+color: white;
+}
+
+header {
+text-align: center;
+padding: 25px;
+background: linear-gradient(90deg,#1c2541,#3a506b);
+}
+
+nav {
+display: flex;
+overflow-x: auto;
+background: #1c2541;
+}
+
+nav button {
+flex: 1;
+padding: 12px;
+border: none;
+background: none;
+color: white;
+cursor: pointer;
+}
+
+nav button:hover {
+background: #3a506b;
+}
+
+.section {
+display: none;
+padding: 20px;
+}
+
+.active {
+display: block;
+}
+
+.card {
+background: #1c2541;
+padding: 18px;
+border-radius: 12px;
+margin-bottom: 15px;
+line-height: 1.8;
+}
+
+.highlight {
+color: #5bc0be;
+}
+
+button.mode {
+background: #e63946;
+border: none;
+padding: 10px;
+margin-top: 10px;
+color: white;
+border-radius: 8px;
+cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>⚡ إنتاج الطاقة من مياه الصرف الصحي</h1>
+<p>نموذج مبتكر باستخدام <span class="highlight">الخلايا الوقودية الميكروبية</span></p>
+<button class="mode" onclick="presentationMode()">🎤 وضع العرض</button>
+</header>
+
+<nav>
+<button onclick="show('idea')">الفكرة</button>
+<button onclick="show('science')">الأساس العلمي</button>
+<button onclick="show('components')">المكونات</button>
+<button onclick="show('steps')">التنفيذ</button>
+<button onclick="show('results')">النتائج</button>
+<button onclick="show('chart')">التحليل</button>
+<button onclick="show('impact')">الأثر</button>
+<button onclick="show('future')">الاستدامة</button>
+</nav>
+
+<!-- الفكرة -->
+<div id="idea" class="section active">
+<div class="card">
+<h2>💡 فكرة المشروع</h2>
+<p>
+يقوم المشروع على استغلال النشاط الحيوي للبكتيريا الموجودة في مياه الصرف الصحي لتحويل الطاقة الكيميائية المخزنة في المواد العضوية إلى طاقة كهربائية قابلة للاستخدام.
+</p>
+</div>
+</div>
+
+<!-- الأساس العلمي -->
+<div id="science" class="section">
+<div class="card">
+<h2>🧠 الأساس العلمي</h2>
+<p>
+تعتمد الخلايا الوقودية الميكروبية على عمليات الأكسدة الحيوية، حيث تقوم البكتيريا بتحليل المركبات العضوية وإطلاق إلكترونات تنتقل عبر الأقطاب الكهربائية، مولدةً تيارًا كهربائيًا.
+</p>
+</div>
+</div>
+
+<!-- المكونات -->
+<div id="components" class="section">
+<div class="card">
+<h2>🔬 مكونات النظام</h2>
+<ul>
+<li>حجرة أنود (بيئة لا هوائية)</li>
+<li>حجرة كاثود</li>
+<li>أقطاب كربونية (Graphite)</li>
+<li>دائرة كهربائية خارجية</li>
+<li>مياه صرف صحي كمصدر عضوي</li>
+<li>جهاز قياس الجهد والتيار</li>
+</ul>
+</div>
+</div>
+
+<!-- التنفيذ -->
+<div id="steps" class="section">
+<div class="card">
+<h2>🧪 خطوات التنفيذ</h2>
+<ol>
+<li>تجهيز الحجرة الحيوية وإضافة العينة</li>
+<li>تركيب الأقطاب وتوصيل الدائرة</li>
+<li>تهيئة البيئة اللاهوائية</li>
+<li>تشغيل النظام ومراقبة التفاعل</li>
+<li>تسجيل القراءات وتحليل البيانات</li>
+</ol>
+</div>
+</div>
+
+<!-- النتائج -->
+<div id="results" class="section">
+<div class="card">
+<h2>📊 النتائج</h2>
+<p>
+تم تسجيل إنتاج جهد كهربائي تدريجي وصل إلى مستويات قابلة للقياس، مما يثبت كفاءة النموذج وإمكانية تطويره.
+</p>
+</div>
+</div>
+
+<!-- الرسم البياني -->
+<div id="chart" class="section">
+<div class="card">
+<h2>📈 تحليل الأداء</h2>
+<canvas id="chartData"></canvas>
+</div>
+</div>
+
+<!-- الأثر -->
+<div id="impact" class="section">
+<div class="card">
+<h2>🌍 الأثر المجتمعي</h2>
+<p>
+يساهم المشروع في تعزيز الاستدامة البيئية وتقليل الهدر، بالإضافة إلى نشر ثقافة الابتكار العلمي.
+</p>
+</div>
+</div>
+
+<!-- الاستدامة -->
+<div id="future" class="section">
+<div class="card">
+<h2>♻️ الاستدامة والتوسع</h2>
+<p>
+يمكن تطوير النموذج ليُستخدم في محطات معالجة المياه لإنتاج طاقة نظيفة، مما يدعم التحول نحو الاقتصاد الأخضر.
+</p>
+</div>
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function presentationMode(){
+document.body.style.fontSize = "22px";
+}
+
+new Chart(document.getElementById('chartData'), {
+type: 'line',
+data: {
+labels: ['0','1','2','3','4','5'],
+datasets: [{
+label: 'الجهد الكهربائي',
+data: [0.2,0.6,1.1,1.5,1.8,2],
+borderWidth: 3
+}]
+}
+});
+</script>
+
+</body>
+</html>
